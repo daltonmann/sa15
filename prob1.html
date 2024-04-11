@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="prob1.css">
+
+<body>
+    <header>
+        <h1>Dalton's Interactive Portfolio</h1>
+    </header>
+    <p>
+        Welcome to my interactive portfolio. These are some things that I think look cool. I don't own any of
+        these images. Try to filter by categories by clicking the buttons below.
+    </p>
+    <section id="portfolio">
+        <div class="filter-buttons">
+            <button onclick="filter('all')">All</button>
+            <button onclick="filter('digital')">Digital Images</button>
+            <button onclick="filter('photo')">Photos</button>
+            <button onclick="filter('drawing')">Drawings</button>
+        </div>
+        <div class="portfolio-items">
+            <div class="item digital"><img src="digital_image1.jpg" alt="Digital Image"></div>
+            <div class="item photo"><img src="photo1.jpg" alt="Photo"></div>
+            <div class="item drawing"><img src="drawing1.jpg" alt="Drawing"></div>
+            <div class="item digital"><img src="digital_image2.jpg" alt="Digital Image"></div>
+            <div class="item photo"><img src="photo2.jpg" alt="Photo"></div>
+            <div class="item drawing"><img src="drawing2.jpg" alt="Drawing"></div>
+        </div>
+    </section>
+    <script>
+        function filter(category) {
+            const items = document.querySelectorAll('.item');
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+    </script>
+</body>
+</html>
